@@ -8,7 +8,7 @@ COPY . .
 RUN apt-get install gradle -y
 RUN gradle build
 
-FROM openjdk:17-sdk-slim
+FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
