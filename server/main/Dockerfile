@@ -7,6 +7,7 @@ COPY . .
 
 RUN apt-get install zip curl -y
 RUN curl -s "https://get.sdkman.io" | bash
+RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
 RUN sdk install gradle
 RUN gradle build
 
