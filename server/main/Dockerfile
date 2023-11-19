@@ -5,11 +5,7 @@ RUN apt-get install openjdk-17-jdk -y
 
 COPY . .
 
-RUN apt-get install zip curl -y
-RUN curl -s "https://get.sdkman.io" | bash
-RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
-RUN sdk install gradle
-RUN gradle build
+RUN ./gradlew bootJar --no-daemon
 
 FROM openjdk:17-jdk-slim
 
