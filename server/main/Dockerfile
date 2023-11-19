@@ -5,7 +5,7 @@ RUN apt-get install openjdk-17-jdk -y
 
 COPY . .
 
-RUN sdk install gradle
+RUN sdk install gradle -y
 RUN gradle build
 
 FROM openjdk:17-jdk-slim
