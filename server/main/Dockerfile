@@ -5,10 +5,9 @@ RUN apt-get install openjdk-17-jdk -y
 
 COPY . .
 
-RUN curl -s "https://get.sdkman.io" | bash 
-RUN source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-RUN sdk install gradle -y
+RUN apt-get install zip curl -y
+RUN curl -s "https://get.sdkman.io" | bash
+RUN sdk install gradle
 RUN gradle build
 
 FROM openjdk:17-jdk-slim
